@@ -1,0 +1,35 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost
+          defaultBrokerPort: 9092
+          configuration:
+            auto-offset-reset: latest
+            autoCreateTopics: true
+      bindings:
+        # input bindings
+        topic-in-0: # binding name
+          destination: consumer-test
+          group: consumer-test-group
+        # output bindings
+        topic-out-0: # binding name
+          destination: consumer-test
+
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+debug: true
+
+management:
+  endpoint:
+    restart:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: info,refresh,keepalive,health,restart
+#server:
+#  port: 8081
