@@ -15,8 +15,6 @@ import org.springframework.stereotype.Component;
         groupId = "${spring.cloud.stream.bindings.topic-in-0.group}",
         containerFactory = "kafkaListenerContainerFactory")
 public class EventListeners {
-
-
     @KafkaHandler
     public void handleBusinessAccountCreatedEvent(@Payload InMessageImpl event) {
         System.out.println(event);
@@ -24,6 +22,4 @@ public class EventListeners {
     public void handleBusinessAccountCreatedEvent(@Payload InMessageImplTwo event) {
         System.out.println(event);
     }
-
-
 }

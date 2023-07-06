@@ -21,7 +21,6 @@ import java.util.Map;
 
 @Configuration
 public class KafkaConsumerConfiguration {
-
     private final String SERVER;
     private final String SERVER_PORT;
 
