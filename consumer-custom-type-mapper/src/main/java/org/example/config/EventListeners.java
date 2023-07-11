@@ -16,10 +16,11 @@ import org.springframework.stereotype.Component;
         containerFactory = "kafkaListenerContainerFactory")
 public class EventListeners {
     @KafkaHandler
-    public void handleBusinessAccountCreatedEvent(@Payload InMessageImpl event) {
+    public void handleInMessageImplEvent(@Payload InMessageImpl event) {
         System.out.println(event);
-    }@KafkaHandler
-    public void handleBusinessAccountCreatedEvent(@Payload InMessageImplTwo event) {
+    }
+    @KafkaHandler
+    public void handleInMessageImplTwoEvent(@Payload InMessageImplTwo event) {
         System.out.println(event);
     }
 }
